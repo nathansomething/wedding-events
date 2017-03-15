@@ -1,0 +1,219 @@
+html {
+  font-size: 24px;
+}
+
+body {
+  background-image: url('background.jpg');
+  background-color: #333;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+div.black-back {
+  background-color: rgba(0,0,0,0.5);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  color: #FFF;
+  width: 50vw;
+  margin: 0 auto;
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
+button.btn {
+  border-radius: 50px;
+  padding: 5px 20px;
+  position: fixed;
+  border: 1px solid #666;
+  color: #FFF;
+  background-color: rgba(0,0,0,0);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0, rgba(30,30,30,0.5) 100%);
+}
+
+button.btn.btn-block {
+  position: static;
+  font-family: 'Indie Flower', cursive;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+button.btn.btn-block:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: #CCC;
+}
+
+button.btn.dark {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0, rgba(30,30,30,0.7) 100%);
+}
+
+button.btn:hover {
+  color: #555;
+}
+
+.control {
+  font-size: 0.7rem;
+	position: relative;
+	display: block;
+	margin-bottom: 15px;
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.control__indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background-color: rgba(230, 230, 230, 0.7);
+}
+
+.control--radio .control__indicator {
+	border-radius: 50%;
+}
+
+/* Hover and focus states */
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+	background: #ccc;
+}
+
+/* Checked state */
+.control input:checked ~ .control__indicator {
+	background: rgba(30, 30, 30, 0.8);
+}
+
+/* Hover state whilst checked */
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+	background: rgba(30, 30, 30, 0.8);
+}
+
+/* Check mark */
+.control__indicator:after {
+	position: absolute;
+	display: none;
+	content: '';
+}
+
+/* Show check mark */
+.control input:checked ~ .control__indicator:after {
+	display: block;
+}
+
+/* Radio button inner circle */
+.control--radio .control__indicator:after {
+	top: 7px;
+	left: 7px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.8);
+}
+
+h1 {
+  font-family: 'Calligraffitti', cursive;
+  font-size: 3.0rem;
+}
+
+h2, h3 {
+  font-family: 'Indie Flower', cursive;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+h3 {
+  font-size: 1.7rem;
+}
+
+h3.popover-title {
+  background-color: rgba(30,30,30,0.5);
+  border-bottom: 1px solid rgba(20,20,20,0.2);
+}
+
+div.popover {
+  background-color: rgba(0,0,0,0);
+  border: 1px solid #666;
+  color: #FFF;
+}
+
+div.popover h3 {
+  font-weight: bold;
+}
+
+div.popover p {
+  font-size: 22px;
+}
+
+div.popover-content {
+  background: rgba(0,0,0,0.5);
+}
+
+.popover.right .arrow:after {
+  border-right-color: #666;
+}
+
+.popover.left .arrow:after {
+  border-left-color: #666;
+}
+
+.popover.top .arrow:after {
+  border-top-color: #666;
+}
+
+p {
+  font-family: 'Indie Flower', cursive;
+}
+
+input.form-control {
+  font-family: 'Indie Flower', cursive;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  color: #333;
+  font-size: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  font-family: 'Indie Flower', sans-serif;
+}
+
+input::-webkit-input-placeholder {
+  color: #333 !important;
+  /*font-weight: bold;*/
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+  color: #333 !important;
+  /*font-weight: bold;*/
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+  color: #333 !important;
+  /*font-weight: bold;*/
+}
+
+input:-ms-input-placeholder {
+  color: #333 !important;
+  /*font-weight: bold;*/
+}
+
+.form-control:focus{
+    border-color: #cccccc;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}

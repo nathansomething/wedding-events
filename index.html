@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nathan and Veida's Wedding</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Calligraffitti|Indie+Flower|Reenie+Beanie|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="custom.css">
+  </head>
+  <body>
+    <div class="black-back">
+      <h1 class="title text-center">Nathan and Veida</h1>
+      <h3 class="date tetx-center">July 20th, 2017</h3>
+    </div>
+    <button type="button" class="btn" data-container="body" data-toggle="popover" data-placement="right" data-title="<h3>Information</h3>" data-content="<p>Venue: Cape Horn Estate</p><p>Time: 11AM-6PM</p>" style="left: 10vw; top: 30vh;">
+      <h3>Information</h3>
+    </button>
+    <button type="button" class="btn" data-container="body" data-toggle="popover" data-placement="right" data-title="<h3>Schedule</h3>" data-content="<p>Guests Arrive: 11:00-12:00</p><p>Ceremony: 12:00-1:00</p><p>Lunch: 1:00-2:00</p><p>Dancing: 2:00-5:00</p>" style="left: 10vw; top: 50vh;">
+      <h3>Schedule</h3>
+    </button>
+    <button type="button" class="btn" data-container="body" data-toggle="popover" data-placement="left" data-title="<h3>Our Story</h3>" data-content="<p>A blurb about how we met</p>" style="right: 10vw; top: 30vh;">
+      <h3>Our Story</h3>
+    </button>
+    <button type="button" class="btn" data-container="body" data-toggle="popover" data-placement="left" data-title="<h3>Registry</h3>" data-content="<p>Some stuff about our registry</p>" style="right: 10vw; top: 50vh;">
+      <h3>Registry</h3>
+    </button>
+    <button type="button" class="btn dark" data-container="body" data-toggle="popover" data-trigger="click" data-placement="top" data-title="<h3>RSVP Form</h3>" style="margin: 0 auto; left: 0; right: 0; bottom: 10vh;">
+      <h2>RSVP Form</h2>
+    </button>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+      $(function () {
+
+        $('button.btn.dark').data("content",
+          '<form><div class="form-group"><input type="text" class="form-control" placeholder="First Name(s)"><br><input type="text" class="form-control" placeholder="Last Name"><br><input type="email" class="form-control" placeholder="Email"></div><div class="control-group"><label class="control control--radio">Will Attend<input type="radio" name="radio" checked="checked"/><div class="control__indicator"></div></label><label class="control control--radio">Unable To Attend<input type="radio" name="radio"/><div class="control__indicator"></div></label></div><button type="submit" class="btn btn-block">Submit</button></form>'
+        );
+        var popovers = $('[data-toggle="popover"]');
+        //popovers.popover(); //active
+
+        popovers.popover({ trigger: "manual" , html: true, animation:false})
+        .on("mouseenter", function () {
+            var _this = this;
+            $(this).popover("show");
+            $(".popover").on("mouseleave", function () {
+                $(_this).popover('hide');
+            });
+        }).on("mouseleave", function () {
+            var _this = this;
+            setTimeout(function () {
+                if (!$(".popover:hover").length) {
+                    $(_this).popover("hide");
+                }
+            }, 300);
+        });
+      });
+    </script>
+  </body>
+</html>
