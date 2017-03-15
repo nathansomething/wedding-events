@@ -70,6 +70,12 @@ button.btn:hover {
 	opacity: 0;
 }
 
+label.control.control--radio {
+  font-family: 'Reenie+Beanie';
+  font-weight: normal;
+  font-style: italic;
+}
+
 .control__indicator {
 	position: absolute;
 	top: 2px;
