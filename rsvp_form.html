@@ -1,0 +1,51 @@
+<form>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="First Name(s)">
+    <br>
+    <input type="text" class="form-control" placeholder="Last Name">
+    <br>
+    <input type="email" class="form-control" placeholder="Email">
+    <br>
+    <input type="text" class="form-control" placeholder="Number of People"><br>
+    <div class="control-group">
+      <label>Out Of Town
+        <input id="outoftowncheck" type="checkbox">
+      </label>
+    </div>
+    <span id="outoftownform" style="display: none">
+      <h3>Friday Night Picnic</h3>
+      <div class="control-group">
+        <label class="control control--radio">Will Attend
+          <input type="radio" name="radio" checked="checked"/>
+          <div class="control__indicator"></div>
+        </label>
+        <label class="control control--radio">Unable To Attend
+          <input type="radio" name="radio"/>
+          <div class="control__indicator"></div>
+        </label>
+      </div>
+      <h3>Saturday Night Dinner</h3>
+      <div class="control-group">
+        <label class="control control--radio">Will Attend<input type="radio" name="radio" checked="checked"/>
+          <div class="control__indicator"></div>
+        </label>
+        <label class="control control--radio">Unable To Attend
+          <input type="radio" name="radio"/>
+          <div class="control__indicator"></div>
+        </label>
+      </div>
+    </span>
+  </div>
+  <h3>Wedding</h3>
+  <div class="control-group">
+    <label class="control control--radio">Will Attend
+      <input type="radio" name="radio" checked="checked"/>
+      <div class="control__indicator"></div>
+    </label>
+    <label class="control control--radio">Unable To Attend
+      <input type="radio" name="radio"/>
+      <div class="control__indicator"></div>
+    </label>
+  </div>
+  <button type="submit" class="btn btn-block">Submit</button>
+</form>

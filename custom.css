@@ -42,6 +42,11 @@ button.btn.btn-block {
   font-size: 2rem;
 }
 
+button.btn.btn-block.sml {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
 button.btn.btn-block:hover {
   background-color: rgba(0,0,0,0.8);
   color: #CCC;
@@ -71,9 +76,9 @@ button.btn:hover {
 }
 
 label.control.control--radio {
-  font-family: 'Reenie+Beanie';
+  font-family: 'Quicksand', sans-serif;
   font-weight: normal;
-  font-style: italic;
+  display: inline;
 }
 
 .control__indicator {
@@ -146,6 +151,11 @@ h3 {
   font-size: 1.7rem;
 }
 
+h4 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+}
+
 h3.popover-title {
   background-color: rgba(30,30,30,0.5);
   border-bottom: 1px solid rgba(20,20,20,0.2);
@@ -155,6 +165,7 @@ div.popover {
   background-color: rgba(0,0,0,0);
   border: 1px solid #666;
   color: #FFF;
+  max-width: none;
 }
 
 div.popover h3 {
@@ -166,7 +177,7 @@ div.popover p {
 }
 
 div.popover-content {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.8);
 }
 
 .popover.right .arrow:after {
@@ -190,12 +201,13 @@ input.form-control {
   background-color: rgba(255, 255, 255, 0.5);
   font-weight: bold;
   color: #333;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 label {
   font-size: 1rem;
-  font-family: 'Indie Flower', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  margin: 5px;
 }
 
 input::-webkit-input-placeholder {
