@@ -1,51 +1,25 @@
-<form>
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="First Name(s)">
-    <br>
-    <input type="text" class="form-control" placeholder="Last Name">
-    <br>
-    <input type="email" class="form-control" placeholder="Email">
-    <br>
-    <input type="text" class="form-control" placeholder="Number of People"><br>
+<div>
+  <form method="post" action="https://formspree.io/nathan.something@gmail.com">
+    <div class="form-group">
+      <input name="FirstName" class="form-control" placeholder="First Name(s)">
+      <br>
+      <input name="LastName" class="form-control" placeholder="Last Name">
+      <br>
+      <input name="Email" class="form-control" placeholder="Email">
+      <br>
+      <input name="NumberOfPeople" class="form-control" placeholder="Number of People">
+      <br>
+    </div>
     <div class="control-group">
-      <label>Out Of Town
-        <input id="outoftowncheck" type="checkbox">
+      <label class="control control--radio">Will Attend
+        <input name="WillAttend" type="radio" name="radio" checked="checked"/>
+        <div class="control__indicator"></div>
+      </label>
+      <label class="control control--radio">Unable To Attend
+        <input name="UnableToAttend" type="radio" name="radio"/>
+        <div class="control__indicator"></div>
       </label>
     </div>
-    <span id="outoftownform" style="display: none">
-      <h3>Friday Night Picnic</h3>
-      <div class="control-group">
-        <label class="control control--radio">Will Attend
-          <input type="radio" name="radio" checked="checked"/>
-          <div class="control__indicator"></div>
-        </label>
-        <label class="control control--radio">Unable To Attend
-          <input type="radio" name="radio"/>
-          <div class="control__indicator"></div>
-        </label>
-      </div>
-      <h3>Saturday Night Dinner</h3>
-      <div class="control-group">
-        <label class="control control--radio">Will Attend<input type="radio" name="radio" checked="checked"/>
-          <div class="control__indicator"></div>
-        </label>
-        <label class="control control--radio">Unable To Attend
-          <input type="radio" name="radio"/>
-          <div class="control__indicator"></div>
-        </label>
-      </div>
-    </span>
-  </div>
-  <h3>Wedding</h3>
-  <div class="control-group">
-    <label class="control control--radio">Will Attend
-      <input type="radio" name="radio" checked="checked"/>
-      <div class="control__indicator"></div>
-    </label>
-    <label class="control control--radio">Unable To Attend
-      <input type="radio" name="radio"/>
-      <div class="control__indicator"></div>
-    </label>
-  </div>
-  <button type="submit" class="btn btn-block">Submit</button>
-</form>
+    <button type="submit" class="btn btn-block sml">Submit</button>
+  </form>
+</div>

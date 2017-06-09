@@ -1,145 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
   <head>
     <title>Nathan and Veida's Wedding</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="script.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Calligraffitti|Indie+Flower|Reenie+Beanie|Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="custom.css">
   </head>
-  <body>
+  <body ng-controller="Popovers">
     <div class="black-back">
       <h1 class="title text-center">Nathan and Veida</h1>
       <h3 class="date tetx-center">July 30th, 2017</h3>
+      <p style="font-size: 20px;">Only {{num_days}} days away</p>
     </div>
-    <button type="button" class="btn" data-container="body" data-toggle="popover" data-placement="right" data-title="<h3>Information</h3>" data-content="<p>Venue: Cape Horn Estate</p><p>Time: 11AM-6PM</p>" style="left: 10vw; top: 30vh;">
-      <h3>Information</h3>
-    </button>
-    <button type="button" class="btn" data-container="body" data-toggle="popover" data-placement="right" data-title="<h3>Schedule</h3>" data-content="<p>Guests Arrive: 11:00-12:00</p><p>Ceremony: 12:00-1:00</p><p>Lunch: 1:00-2:00</p><p>Dancing: 2:00-5:00</p>" style="left: 10vw; top: 50vh;">
-      <h3>Schedule</h3>
-    </button>
-    <button type="button" class="btn" data-container="body" data-toggle="popover" data-placement="left" data-title="<h3>Our Story</h3>" data-content="<p>A blurb about how we met</p>" style="right: 10vw; top: 30vh;">
-      <h3>Our Story</h3>
-    </button>
-    <button type="button" class="btn" data-container="body" data-toggle="popover" data-placement="left" data-title="<h3>Registry</h3>" data-content="<p>Some stuff about our registry</p>" style="right: 10vw; top: 50vh;">
-      <h3>Registry</h3>
-    </button>
-    <button id="rsvp_form_button" type="button" class="btn dark" data-container="body" data-toggle="popover" data-trigger="click" data-placement="top" data-title="<h3>RSVP Form</h3>" style="margin: 0 auto; left: 50%; right: 50%; transform: translate(-50%, -50%); bottom: 5vh;">
-      <h2>RSVP Form</h2>
-    </button>
-    <div id="rsvp_form_content">
-      <form>
-        <h4>Family Information</h4>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="First Name(s)">
-          <br>
-          <input type="text" class="form-control" placeholder="Last Name">
-          <br>
-          <input type="email" class="form-control" placeholder="Email">
-          <br>
-          <input type="text" class="form-control" placeholder="Number of People">
-          <br>
-        </div>
-        <span class="control-group" id="out_of_town">
-          <h4>Coming From Out of Town</h4>
-          <label class="control control--radio">Yes
-            <input id="outoftown_yes" type="radio" name="outoftown">
-            <div class="control__indicator"></div>
-          </label>
-          <label class="control control--radio">No
-            <input id="outoftown_no" type="radio" name="outoftown">
-            <div class="control__indicator"></div>
-          </label>
-        </span>
-        <span class="control-group" id="friday_night_picnic" style="display: none">
-          <h4>Friday Night Picnic</h4>
-          <label class="control control--radio">Will Attend
-            <input type="radio" name="fridaynightpicnic">
-            <div class="control__indicator"></div>
-          </label>
-          <label class="control control--radio">Unable To Attend
-            <input type="radio" name="fridaynightpicnic"/>
-            <div class="control__indicator"></div>
-          </label>
-        </span>
-        <span class="control-group" id="saturday_night_dinner" style="display: none">
-          <h4>Saturday Night Dinner</h4>
-          <label class="control control--radio">Will Attend
-            <input type="radio" name="saturdaynightdinner">
-            <div class="control__indicator"></div>
-          </label>
-          <label class="control control--radio">Unable To Attend
-            <input type="radio" name="saturdaynightdinner">
-            <div class="control__indicator"></div>
-          </label>
-        </span>
-        <h4>Wedding</h4>
-        <span class="control-group">
-          <label class="control control--radio">Will Attend
-            <input type="radio" name="wedding">
-            <div class="control__indicator"></div>
-          </label>
-          <label class="control control--radio">Unable To Attend
-            <input type="radio" name="wedding">
-            <div class="control__indicator"></div>
-          </label>
-        </span>
-        <button type="submit" class="btn btn-block sml">Submit</button>
-      </form>
-    </div>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
+    <span ng-init="popoverOpened1=false" ng-mouseover="popoverOpened1=true" ng-mouseleave="popoverOpened1=false">
+      <button type="button" class="btn" uib-popover-html="information" popover-title="Information" popover-placement="right" popover-is-open="popoverOpened1" popover-trigger="'mouseenter'" style="left: 10vw; top: 30vh;">
+        <h3>Information</h3>
+      </button>
+    </span>
 
-      $(function () {
+    <span ng-init="popoverOpened2=false" ng-mouseover="popoverOpened2=true" ng-mouseleave="popoverOpened2=false">
+      <button type="button" class="btn" uib-popover-html="schedule" popover-title="Schedule" popover-placement="right" popover-trigger="'mouseenter'" popover-is-open="popoverOpened2" style="left: 10vw; top: 50vh;">
+        <h3>Schedule</h3>
+      </button>
+    </span>
 
-        $('#rsvp_form_button').data("content", $("#rsvp_form_content").html());
+    <span ng-init="popoverOpened3=false" ng-mouseover="popoverOpened3=true" ng-mouseleave="popoverOpened3=false">
+      <button type="button" class="btn" uib-popover-html="our_story" popover-title="Our Story" popover-placement="left" popover-trigger="'mouseenter'" popover-is-open="popoverOpened3" style="right: 10vw; top: 30vh;">
+        <h3>Our Story</h3>
+      </button>
+    </span>
 
+    <span ng-init="popoverOpened4=false" ng-mouseover="popoverOpened4=true" ng-mouseleave="popoverOpened4=false">
+      <button type="button" class="btn" uib-popover-html="registry" popover-placement="left" popover-title="Registry" popover-trigger="'mouseenter'" popover-is-open="popoverOpened4" style="right: 10vw; top: 50vh;">
+        <h3>Registry</h3>
+      </button>
+    </span>
 
-        var popovers = $('[data-toggle="popover"]');
-        //popovers.popover(); //active
-
-        popovers.popover({ trigger: "click", html: true});
-
-        // popovers.popover({ trigger: "manual" , html: true, animation:false})
-        // .on("mouseenter", function () {
-        //     var _this = this;
-        //     $(this).popover("show");
-        //
-        //     $(".popover").on("mouseleave", function () {
-        //         $(_this).popover('hide');
-        //     });
-        // }).on("mouseleave", function () {
-        //     var _this = this;
-        //     setTimeout(function () {
-        //         if (!$(".popover:hover").length) {
-        //             $(_this).popover("hide");
-        //         }
-        //     }, 300);
-        // });
-
-        $("body").click(function() {
-
-          if ($("input#outoftown_yes").is(":checked")) {
-            $(this).find("#friday_night_picnic").css("display", "block");
-            console.log($(this).find("#friday_night_picnic").css("display"));
-            // $(this).find("#friday_night_picnic").show();
-            // $(this).find("#saturday_night_dinner").show();
-          }
-          // if ($("input#outoftown_yes").is(":checked")) {
-          //   alert("checked");
-          //   $(this).find("#friday_night_picnic").show();
-          //   $(this).find("#saturday_night_dinner").show();
-          // }
-          // else {
-          //   alert("not checked");
-          //   $(this).find("#friday_night_picnic").hide();
-          //   $(this).find("#saturday_night_dinner").hide();
-          // }
-        });
-
-      });
-    </script>
+    <span ng-init="popoverOpened5=false" ng-mouseover="popoverOpened5=true" ng-mouseleave="popoverOpened5=false">
+      <button type="button" class="btn" id="rsvp_form_button" uib-popover-template="'./rsvp_form.html'" popover-title="RSVP Form" popover-trigger="'mouseenter click'" popover-is-open="popoverOpened5" style="margin: 0 auto; left: 50%; right: 50%; transform: translate(-50%, -50%); bottom: 5vh;">
+        <h2>RSVP Form</h2>
+      </button>
+    </span>
   </body>
 </html>

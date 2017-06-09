@@ -43,7 +43,7 @@ button.btn.btn-block {
 }
 
 button.btn.btn-block.sml {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-top: 10px;
 }
 
@@ -76,9 +76,9 @@ button.btn:hover {
 }
 
 label.control.control--radio {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1rem;
   font-weight: normal;
-  display: inline;
 }
 
 .control__indicator {
@@ -151,6 +151,11 @@ h3 {
   font-size: 1.7rem;
 }
 
+h3.popover-title {
+  text-align: center;
+  font-size: 1rem;
+}
+
 h4 {
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
@@ -205,8 +210,8 @@ input.form-control {
 }
 
 label {
-  font-size: 1rem;
-  font-family: 'Quicksand', sans-serif;
+  font-size: 0.7rem;
+  font-family: 'Indie Flower', cursive;
   margin: 5px;
 }
 
