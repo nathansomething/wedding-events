@@ -24,6 +24,7 @@
         <h3>Friday Night Shabbat Picnic</h3>
         <ul>
           <li>Join us for a homemade Shabbat dinner in the park</li>
+          <li>PLEASE RSVP --></li>
           <li>Evelyn M. Schiffler Memorial Park</li>
           <li>SW Erickson Ave, Beaverton, OR 97005</li>
           <li class="time">5:00PM-8:00PM</li>
@@ -34,7 +35,7 @@
           <li>While we'd love for you to come, please feel no obligation</li>
           <li>Congregation Neveh Shalom</li>
           <li>2900 SW Peaceful Ln, Portland, OR 97239</li>
-          <li class="time">Service go from 9:30AM-12:00PM,<br> Aliyah sometime between 10:00-11:00</li>
+          <li class="time">Services go from 9:30AM-12:00PM,<br> Aliyah sometime between 10:00-11:00</li>
         </ul>
         <h3>Saturday Afternoon Hike</h3>
         <ul>
@@ -46,6 +47,7 @@
         <h3>Saturday Night Dinner</h3>
         <ul>
           <li>Join us for dinner Saturday Night</li>
+          <li>PLEASE RSVP --></li>
           <li>Bethany Public House</li>
           <li>4840 NW Bethany Blvd, Portland, OR 97229</li>
           <li class="time">7:00PM - 10:00PM</li>
@@ -55,41 +57,46 @@
         <h1>RSVP</h1>
         <form method="post" action="https://formspree.io/nathan.something@gmail.com">
           <div class="form-group">
-            <input name="FirstName" class="form-control" placeholder="First Name">
+            <input name="FirstName" class="form-control" placeholder="First Name(s)">
             <br>
-            <input name="LastName" class="form-control" placeholder="Last Name">
+            <input name="LastName" class="form-control" placeholder="Last Name(s)">
             <br>
             <input name="Email" class="form-control" placeholder="Email">
             <br>
           </div>
           <h3>Friday Night Picnic</h3>
-          <div class="control-group">
+          <div class="control-group quantity">
             <label class="control control--radio">Will Attend
-              <input type="radio" name="friday_night" value="WillAttend" checked="checked"/>
+              <input type="radio" class="form-control" name="friday_night" value="WillAttend" checked="checked"/>
               <div class="control__indicator"></div>
             </label>
             <label class="control control--radio">Unable To Attend
-              <input type="radio" name="friday_night" value="UnableToAttend"/>
+              <input type="radio" class="form-control" name="friday_night" value="UnableToAttend"/>
               <div class="control__indicator"></div>
             </label>
+            <label><input type="number" class="form-control" name="number_attending" value="0" min="0"> Number Attending</label>
           </div>
           <h3>Saturday Night Dinner</h3>
-          <div class="control-group">
-            <label class="control control--radio">Regular Burger
-              <input type="radio" name="saturday_night" value="regular" checked="checked"/>
-              <div class="control__indicator"></div>
-            </label>
-            <label class="control control--radio">Chicken Burger
-              <input type="radio" name="saturday_night" value="chicken" />
-              <div class="control__indicator"></div>
-            </label>
-            <label class="control control--radio">Vegan Burger
-              <input type="radio" name="saturday_night" value="vegan" />
+          <div class="control-group quantity">
+            <label class="control control--radio">Will Attend
+              <input type="radio" class="form-control" name="saturday_night" value="WillAttend" checked="checked"/>
               <div class="control__indicator"></div>
             </label>
             <label class="control control--radio">Unable To Attend
-              <input type="radio" name="saturday_night" value="unable"/>
+              <input type="radio" class="form-control" name="saturday_night" value="UnableToAttend"/>
               <div class="control__indicator"></div>
+            </label>
+            <label>
+              <input type="number" class="form-control" name="saturday_night_regular" value="0" min="0" />
+              Regular Burger
+            </label>
+            <label>
+              <input type="number" class="form-control" name="saturday_night_chicken" value="0" min="0" />
+              Chicken Burger
+            </label>
+            <label>
+              <input type="number" class="form-control" name="saturday_night_vegan" value="0" min="0" />
+              Vegan Burger
             </label>
           </div>
           <input type="hidden" name="_next" value="https://nathansomething.github.io/wedding-events/thankyou.html" />

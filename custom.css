@@ -43,6 +43,7 @@ div.card {
   color: #FFF;
   height: auto;
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 60vh;
 }
 
@@ -272,10 +273,17 @@ input.form-control {
   font-size: 0.8rem;
 }
 
+input[type=number] {
+  width: 100px;
+  display: inline;
+  font-size: 0.8rem;
+}
+
 label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-family: 'Indie Flower', cursive;
   margin: 5px;
+  display: block;
 }
 
 input::-webkit-input-placeholder {
