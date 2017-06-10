@@ -108,6 +108,15 @@ button.btn:hover {
   color: #555;
 }
 
+a, a:visited, a:active {
+  color: #4682B4;
+}
+
+a:hover {
+  color: #4682B4;
+  text-decoration: underline;
+}
+
 .control {
   font-size: 0.7rem;
 	position: relative;
